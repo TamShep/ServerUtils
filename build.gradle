@@ -58,6 +58,7 @@ dependencies {
     implementation project(path: ':Common', configuration: 'shadow')
     implementation project(path: ':Bukkit', configuration: 'shadow')
     implementation project(path: ':Bungee', configuration: 'shadow')
+    implementation project(path: ':Velocity', configuration: 'shadow')
 }
 
 build.dependsOn shadowJar

@@ -1,0 +1,29 @@
+plugins {
+    id 'net.kyori.blossom' version '1.1.0'
+}
+
+group = rootProject.group + '.velocity'
+String dependencyDir = group + '.dependencies'
+version = rootProject.version
+archivesBaseName = rootProject.name + '-Velocity'
+
+repositories {
+    maven { url 'https://repo.velocitypowered.com/snapshots/' }
+}
+
+dependencies {
+    implementation 'co.aikar:acf-velocity:0.5.0-SNAPSHOT'
+    implementation project(":Common")
+    compileOnly 'com.velocitypowered:velocity-api:1.0.9-SNAPSHOT'
+    annotationProcessor 'com.velocitypowered:velocity-api:1.0.9-SNAPSHOT'
+}
+
+blossom {
+    replaceTokenIn('src/main/java/net/frankheijden/serverutils/velocity/ServerUtils.java')
+    replaceToken '${version}', version
+}
+
+shadowJar {
+    relocate 'co.aikar.commands', dependencyDir + '.acf'
+    relocate 'co.aikar.locales', dependencyDir + '.locales'
+}
