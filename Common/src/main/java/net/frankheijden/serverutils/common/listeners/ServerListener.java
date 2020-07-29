@@ -1,13 +1,13 @@
 package net.frankheijden.serverutils.common.listeners;
 
 import net.frankheijden.serverutils.common.config.Config;
-import net.frankheijden.serverutils.common.config.YamlConfig;
+import net.frankheijden.serverutils.common.config.AbstractConfig;
 import net.frankheijden.serverutils.common.entities.ServerCommandSender;
 import net.frankheijden.serverutils.common.tasks.UpdateCheckerTask;
 
 public class ServerListener {
 
-    private static final YamlConfig config = Config.getInstance().getConfig();
+    private static final AbstractConfig config = Config.getInstance().getConfig();
 
     /**
      * Handles the update check on the given ServerCommandSender.

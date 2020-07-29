@@ -7,27 +7,27 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.frankheijden.serverutils.common.config.YamlConfig;
+import net.frankheijden.serverutils.common.config.AbstractConfig;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
 
-public class BungeeYamlConfig implements YamlConfig {
+public class BungeeConfig extends AbstractConfig {
 
     private static final ConfigurationProvider provider = ConfigurationProvider.getProvider(YamlConfiguration.class);
     private final Configuration config;
     private File file = null;
 
-    public BungeeYamlConfig(File file) throws IOException {
+    public BungeeConfig(File file) throws IOException {
         this.config = provider.load(file);
         this.file = file;
     }
 
-    public BungeeYamlConfig(InputStream in) {
+    public BungeeConfig(InputStream in) {
         this.config = provider.load(in);
     }
 
-    public BungeeYamlConfig(Configuration config) {
+    public BungeeConfig(Configuration config) {
         this.config = config;
     }
 
@@ -35,7 +35,7 @@ public class BungeeYamlConfig implements YamlConfig {
     public Object get(String path) {
         Object obj = config.get(path);
         if (obj instanceof Configuration) {
-            return new BungeeYamlConfig((Configuration) obj);
+            return new BungeeConfig((Configuration) obj);
         }
         return obj;
     }

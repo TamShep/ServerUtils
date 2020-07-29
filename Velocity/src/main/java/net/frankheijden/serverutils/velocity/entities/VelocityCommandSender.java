@@ -1,6 +1,7 @@
 package net.frankheijden.serverutils.velocity.entities;
 
 import com.velocitypowered.api.command.CommandSource;
+import com.velocitypowered.api.proxy.Player;
 import net.frankheijden.serverutils.common.entities.ServerCommandSender;
 import net.kyori.text.TextComponent;
 
@@ -20,5 +21,10 @@ public class VelocityCommandSender implements ServerCommandSender {
     @Override
     public boolean hasPermission(String permission) {
         return source.hasPermission(permission);
+    }
+
+    @Override
+    public boolean isPlayer() {
+        return source instanceof Player;
     }
 }

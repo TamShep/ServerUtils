@@ -27,12 +27,12 @@ public class VelocityPluginManager extends AbstractPluginManager<Object> {
     }
 
     @Override
-    public CloseableResult reloadPlugin(String pluginName) {
+    public Result reloadPlugin(String pluginName) {
         return null;
     }
 
     @Override
-    public CloseableResult reloadPlugin(Object plugin) {
+    public Result reloadPlugin(Object plugin) {
         return null;
     }
 
@@ -63,6 +63,16 @@ public class VelocityPluginManager extends AbstractPluginManager<Object> {
 
     @Override
     public File getPluginFile(Object plugin) {
+        return null;
+    }
+
+    @Override
+    public File getPluginFile(String pluginName) {
+        return null;
+    }
+
+    @Override
+    public Object getPlugin(String pluginName) {
         return null;
     }
 

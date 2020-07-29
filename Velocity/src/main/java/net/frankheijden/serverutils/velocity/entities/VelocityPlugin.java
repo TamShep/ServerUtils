@@ -49,6 +49,7 @@ public class VelocityPlugin extends ServerUtilsPlugin {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public VelocityTaskManager getTaskManager() {
         return taskManager;
     }

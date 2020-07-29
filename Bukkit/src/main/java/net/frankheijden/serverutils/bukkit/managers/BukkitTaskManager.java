@@ -20,9 +20,4 @@ public class BukkitTaskManager extends AbstractTaskManager<BukkitTask> {
     protected BukkitTask runTaskAsynchronouslyImpl(Runnable runnable) {
         return Bukkit.getScheduler().runTaskAsynchronously(ServerUtils.getInstance(), runnable);
     }
-
-    @Override
-    public void cancelTask(BukkitTask task) {
-        task.cancel();
-    }
 }

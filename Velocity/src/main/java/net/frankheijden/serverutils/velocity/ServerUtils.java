@@ -15,8 +15,8 @@ import com.velocitypowered.api.proxy.ProxyServer;
 public class ServerUtils {
 
     private static ServerUtils instance;
-    private static final String CONFIG_RESOURCE = "velocity-config.yml";
-    private static final String MESSAGES_RESOURCE = "velocity-messages.yml";
+    private static final String CONFIG_RESOURCE = "velocity-config.json";
+    private static final String MESSAGES_RESOURCE = "velocity-messages.json";
 
     @Inject
     private ProxyServer proxy;

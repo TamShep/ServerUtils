@@ -1,0 +1,12 @@
+{
+  "key": "value",
+  "long": {
+    "nested": {
+      "key": {
+        "with": "value",
+        "and": 10
+      },
+      "anotherKey": true
+    }
+  }
+}

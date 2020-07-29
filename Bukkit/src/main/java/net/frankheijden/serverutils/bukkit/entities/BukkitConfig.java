@@ -8,25 +8,25 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.frankheijden.serverutils.common.config.YamlConfig;
+import net.frankheijden.serverutils.common.config.AbstractConfig;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-public class BukkitYamlConfig implements YamlConfig {
+public class BukkitConfig extends AbstractConfig {
 
     private final MemorySection config;
     private File file = null;
 
-    public BukkitYamlConfig(File file) {
+    public BukkitConfig(File file) {
         this.config = YamlConfiguration.loadConfiguration(file);
         this.file = file;
     }
 
-    public BukkitYamlConfig(InputStream in) {
+    public BukkitConfig(InputStream in) {
         this.config = YamlConfiguration.loadConfiguration(new InputStreamReader(in));
     }
 
-    public BukkitYamlConfig(MemorySection section) {
+    public BukkitConfig(MemorySection section) {
         this.config = section;
     }
 
@@ -34,7 +34,7 @@ public class BukkitYamlConfig implements YamlConfig {
     public Object get(String path) {
         Object obj = config.get(path);
         if (obj instanceof MemorySection) {
-            return new BukkitYamlConfig((MemorySection) obj);
+            return new BukkitConfig((MemorySection) obj);
         }
         return obj;
     }

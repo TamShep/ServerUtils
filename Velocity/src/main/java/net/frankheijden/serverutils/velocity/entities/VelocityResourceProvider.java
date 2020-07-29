@@ -5,7 +5,7 @@ import com.google.inject.Inject;
 import java.io.File;
 import java.io.InputStream;
 
-import net.frankheijden.serverutils.common.config.YamlConfig;
+import net.frankheijden.serverutils.common.config.AbstractConfig;
 import net.frankheijden.serverutils.common.providers.ResourceProvider;
 import net.frankheijden.serverutils.velocity.ServerUtils;
 
@@ -20,12 +20,12 @@ public class VelocityResourceProvider implements ResourceProvider {
     }
 
     @Override
-    public YamlConfig load(InputStream is) {
+    public AbstractConfig load(InputStream is) {
         return null;
     }
 
     @Override
-    public YamlConfig load(File file) {
+    public AbstractConfig load(File file) {
         return null;
     }
 }

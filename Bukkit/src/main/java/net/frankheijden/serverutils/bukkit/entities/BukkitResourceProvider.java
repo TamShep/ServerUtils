@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.InputStream;
 
 import net.frankheijden.serverutils.bukkit.ServerUtils;
-import net.frankheijden.serverutils.common.config.YamlConfig;
+import net.frankheijden.serverutils.common.config.AbstractConfig;
 import net.frankheijden.serverutils.common.providers.ResourceProvider;
 
 public class BukkitResourceProvider implements ResourceProvider {
@@ -21,12 +21,12 @@ public class BukkitResourceProvider implements ResourceProvider {
     }
 
     @Override
-    public YamlConfig load(InputStream is) {
-        return new BukkitYamlConfig(is);
+    public AbstractConfig load(InputStream is) {
+        return new BukkitConfig(is);
     }
 
     @Override
-    public YamlConfig load(File file) {
-        return new BukkitYamlConfig(file);
+    public AbstractConfig load(File file) {
+        return new BukkitConfig(file);
     }
 }

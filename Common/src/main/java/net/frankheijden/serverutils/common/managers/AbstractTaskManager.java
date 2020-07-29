@@ -65,7 +65,9 @@ public abstract class AbstractTaskManager<T> {
         return task;
     }
 
-    public abstract void cancelTask(T task);
+    public void cancelTask(T task) {
+        taskCloser.accept(task);
+    }
 
     /**
      * Cancels a single task by key.
